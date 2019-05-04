@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+
+  tasks:
+    - name: Check user present or not
+      action: checkuser username=root
+      register: checkuser_output
+
+    - debug: var=checkuser_output

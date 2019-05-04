@@ -1,0 +1,10 @@
+---
+- hosts: server
+
+  tasks:
+    - name: Check if process running
+      action: checkprocess process=httpd
+      register: process
+      become: yes
+
+    - debug: var=process

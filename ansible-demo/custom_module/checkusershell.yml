@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+
+  tasks:
+    - name: Return shell name of user
+      action: checkusershell usershell=/bin/bash
+      register: usershell_output
+
+    - debug: var=usershell_output

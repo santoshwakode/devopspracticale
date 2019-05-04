@@ -1,0 +1,21 @@
+---
+- hosts: web
+  gather_facts: no
+
+
+  tasks:
+    - name: installing httpd
+      yum:  pkg=httpd state=installed
+      become: true
+
+    - name: starting httpd
+      service: name=httpd state=started
+      become: true
+      register: httpd_output
+
+    - name: Printing httpd output
+      debug: var=httpd_output
+
+    - name: marking my output
+      debug: msg="My Automation is Successfull"
+      when: httpd_output is succeeded

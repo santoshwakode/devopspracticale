@@ -1,0 +1,11 @@
+---
+- hosts: server
+  
+  tasks:
+    - name: Intall Httpd
+      yum: pkg=httpd state=installed
+      become: true
+
+
+
+
