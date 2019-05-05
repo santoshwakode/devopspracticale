@@ -1,0 +1,4 @@
+---
+
+# tasks file for tomcat_aws
+- include: aws-ec2.yml
